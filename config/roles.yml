@@ -212,6 +212,19 @@ index_management_full_access:
       allowed_actions:
         - 'indices:admin/opensearch/ism/*'
 
+# Allows user to use all control center actions - long-running operation notification
+control_center_full_access:
+  reserved: true
+  cluster_permissions:
+    - 'cluster:admin/opensearch/notifications/channels/get'
+    - 'cluster:admin/opensearch/controlcenter/lron/*'
+
+# Allows user to read control center configs
+control_center_read_access:
+  reserved: true
+  cluster_permissions:
+    - 'cluster:admin/opensearch/controlcenter/lron/get'
+
 # Allows users to use all cross cluster replication functionality at leader cluster
 cross_cluster_replication_leader_full_access:
   reserved: true
